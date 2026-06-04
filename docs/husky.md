@@ -11,8 +11,6 @@
 - [처음부터 설정하기](#처음부터-설정하기)
 - [트러블슈팅](#트러블슈팅)
 
----
-
 ## 개요
 
 이 프로젝트는 **Husky**를 사용하여 Git hooks를 관리합니다. 커밋 품질을 자동으로 보장하기 위해 아래 두 가지 hook을 사용합니다.
@@ -31,8 +29,6 @@
 | [commitlint](https://commitlint.js.org/)                  | v20  | 커밋 메시지 규칙 검증            |
 | [prettier](https://prettier.io/)                          | v3   | 코드 포매팅                      |
 | [eslint](https://eslint.org/)                             | v8   | 코드 린팅                        |
-
----
 
 ## 팀원 온보딩 가이드
 
@@ -139,8 +135,6 @@ git commit --no-verify -m "hotfix: 긴급 수정"
 
 > ⚠️ **주의**: 이 플래그는 모든 Git hook을 건너뜁니다. 정말 긴급한 상황에서만 사용하세요.
 
----
-
 ## 기술 레퍼런스
 
 ### Husky
@@ -181,8 +175,6 @@ yarn install
 
 Husky v9부터는 `.husky/_` 디렉토리에 wrapper 스크립트를 두고, `.git/config`의 `core.hooksPath`를 통해 Git이 이 디렉토리를 hook 경로로 인식하게 합니다.
 
----
-
 ### lint-staged
 
 #### 설정 (`package.json`)
@@ -217,8 +209,6 @@ Husky v9부터는 `.husky/_` 디렉토리에 wrapper 스크립트를 두고, `.g
 #### `--max-warnings=0` 옵션
 
 ESLint의 `--max-warnings=0`은 warning이 하나라도 있으면 에러로 처리합니다. 이를 통해 warning이 점진적으로 쌓이는 것을 방지합니다.
-
----
 
 ### commitlint
 
@@ -274,8 +264,6 @@ scope를 필수로 바꾸고 싶다면:
 ```js
 'scope-enum': [2, 'always', ['auth', 'api', 'ui', 'common']],
 ```
-
----
 
 ## 처음부터 설정하기
 
@@ -391,8 +379,6 @@ npx lint-staged
 □ 테스트 커밋으로 동작 확인
 ```
 
----
-
 ## 트러블슈팅
 
 ### 1. `husky - pre-commit script failed`
@@ -497,8 +483,6 @@ HUSKY=0 yarn install
 ```
 
 `husky || true`로 설정하면 CI 환경에서 husky가 실패해도 install이 중단되지 않습니다.
-
----
 
 ## 참고 자료
 
